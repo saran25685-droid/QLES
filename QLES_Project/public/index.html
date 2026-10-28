@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <title>QLES — Queue & Live Estimation System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="demo-banner"><span class="pulse-dot"></span> DEMO ENVIRONMENT <span>Queue and availability data are simulated locally, not connected to real hospitals.</span></div>
+  <header class="topbar">
+    <a class="brand" href="#" data-page="home"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 4h6v9h9v6h-9v9h-6v-9H4v-6h9z" fill="currentColor"/></svg></span><span>QLES<small>Care, without the wait.</small></span></a>
+    <nav id="main-nav">
+      <a href="#" data-page="home" class="nav-link active">Find a doctor</a>
+      <a href="#" data-page="bookings" class="nav-link auth-only hidden">My bookings</a>
+      <a href="#" data-page="admin" class="nav-link admin-only hidden">Admin dashboard</a>
+    </nav>
+    <div class="nav-actions" id="nav-actions">
+      <button class="btn btn-quiet" data-action="open-login">Log in</button>
+      <button class="btn btn-primary" data-action="open-register">Create account <span>↗</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-icon">✦</span> SMARTER OUTPATIENT CARE</div>
+        <h1>Your time matters.<br><span>Know before you go.</span></h1>
+        <p>Find available doctors, track the waiting queue, and book your visit — all in one place.</p>
+        <div class="hero-search">
+          <span class="search-icon">⌕</span>
+          <input id="search-input" placeholder="Doctor, hospital, or city" aria-label="Search doctors, hospitals, or city">
+          <button class="btn btn-primary" id="search-button">Find care <span>→</span></button>
+        </div>
+        <div class="hero-trust"><span>✓</span> Less uncertainty <span>✓</span> Better planning <span>✓</span> Easy token management</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-cross">+</div>
+        <div class="floating-card float-top"><span class="mini-icon green">◷</span><div><b>Live queue view</b><small>Know your place in line</small></div><span class="live-pill">LIVE*</span></div>
+        <div class="doctor-illustration"><div class="illustration-halo"></div><div class="doctor-head"><div class="hair"></div><div class="face"><i></i><i></i><b></b></div></div><div class="doctor-body"><div class="neck"></div><div class="coat"></div><div class="shirt"></div><div class="stethoscope"></div></div><div class="doctor-badge">✚</div></div>
+        <div class="floating-card float-bottom"><div class="avatar-stack"><span>MK</span><span>AR</span><span>NB</span></div><div><b>Multiple hospitals</b><small>Care options in one view</small></div></div>
+      </div>
+    </section>
+
+    <section class="stats-strip">
+      <div><span class="stat-icon">⌂</span><b id="hospital-count">3</b><small>Demo hospitals</small></div>
+      <div><span class="stat-icon">♙</span><b id="doctor-count">7</b><small>Listed doctors</small></div>
+      <div><span class="stat-icon">◷</span><b>8 sec</b><small>Demo refresh interval</small></div>
+      <div class="stats-note"><span class="status-dot"></span> Queue data refreshes automatically <small>Simulated demo feed</small></div>
+    </section>
+
+    <section class="directory section-wrap" id="directory">
+      <div class="section-heading">
+        <div><div class="eyebrow">FIND THE RIGHT CARE</div><h2>Explore doctors near you</h2><p>Compare specialties, availability and estimated queue times.</p></div>
+        <span class="sample-label">SAMPLE DIRECTORY</span>
+      </div>
+      <div class="filters">
+        <label class="filter-search"><span>⌕</span><input id="directory-search" placeholder="Search doctor, hospital or city"></label>
+        <select id="specialty-filter" aria-label="Filter by specialty"><option value="">All specialties</option></select>
+        <select id="status-filter" aria-label="Filter by status"><option value="">All statuses</option><option>Available</option><option>Consulting</option><option>On Break</option><option>Unavailable</option></select>
+        <select id="hospital-filter" aria-label="Filter by hospital"><option value="">All hospitals</option></select>
+      </div>
+      <div id="doctor-grid" class="doctor-grid"><div class="loading-state">Loading the demo doctor directory…</div></div>
+      <div class="notice"><span>ⓘ</span><p><b>About queue estimates:</b> waiting time is calculated from the number of active tokens ahead and a typical consultation duration. Actual wait times can vary.</p></div>
+    </section>
+
+    <section class="how-section">
+      <div class="section-wrap">
+        <div class="section-heading centered"><div class="eyebrow">SIMPLE BY DESIGN</div><h2>Healthcare planning, made easier</h2><p>Three steps between you and a better-planned visit.</p></div>
+        <div class="steps">
+          <article><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Compare your options</h3><p>Explore sample hospitals and doctors by specialty, location and current status.</p></article>
+          <article><span class="step-number">02</span><div class="step-icon">▣</div><h3>Reserve your token</h3><p>Book a token for a date and find all your booking details in one dashboard.</p></article>
+          <article><span class="step-number">03</span><div class="step-icon">◷</div><h3>Track the queue</h3><p>See the estimated wait and cancel an active booking if your plans change.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta section-wrap"><div><div class="eyebrow">YOUR NEXT VISIT, SIMPLIFIED</div><h2>Spend less time guessing.</h2><p>Create a free demo account to manage your tokens.</p></div><button class="btn btn-light" data-action="open-register">Get started <span>→</span></button></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#" data-page="home"><span class="brand-mark">✚</span><span>QLES<small>Care, without the wait.</small></span></a><p>Queue & Live Estimation System · Student demo project</p><p class="footer-disclaimer">Not connected to real hospital systems. Do not rely on demo estimates for medical decisions.</p></footer>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
